@@ -5,10 +5,6 @@ LABEL maintainer="devops@brainbeanapps.com"
 # Switch to root
 USER root
 
-# Copy assets
-WORKDIR /opt
-COPY . .
-
 # Install Node.js & npm
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
   && apt-get update \
