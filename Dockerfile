@@ -26,11 +26,13 @@ USER user
 WORKDIR /home/user
 
 # Install nvm and multiple Node.js/npm versions
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash - \
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash - \
   && source "/home/user/.nvm/nvm.sh" \
   && nvm install lts/* && npm install -g npm@latest \
   && nvm install lts/argon && npm install -g npm@latest \
   && nvm install lts/boron && npm install -g npm@latest \
   && nvm install lts/carbon && npm install -g npm@latest \
+  && nvm install lts/dubnium && npm install -g npm@latest \
+  && nvm install stable && npm install -g npm@latest \
   && nvm install node && npm install -g npm@latest \
   && nvm use --lts node
