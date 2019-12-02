@@ -5,7 +5,7 @@
 [![Docker Stars](https://img.shields.io/docker/stars/brainbeanapps/nodejs-build-environment.svg)](https://hub.docker.com/r/brainbeanapps/nodejs-build-environment)
 [![Docker Layers](https://images.microbadger.com/badges/image/brainbeanapps/nodejs-build-environment.svg)](https://microbadger.com/images/brainbeanapps/nodejs-build-environment)
 
-Node.js Build Environment is based on latest Ubuntu LTS and is suitable for building most Node.js-based apps, like:
+Node.js Build Environment is based on Ubuntu LTS and is suitable for building most Node.js-based apps, like:
 
 * Node.js-based apps
 * React.js-based apps

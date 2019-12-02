@@ -1,9 +1,13 @@
-FROM brainbeanapps/base-linux-build-environment:latest
+FROM brainbeanapps/base-linux-build-environment:v3.0.0
 
 LABEL maintainer="devops@brainbeanapps.com"
 
 # Switch to root
 USER root
+
+# Set shell as non-interactive during build
+# NOTE: This is discouraged in general, yet we're using it only during image build
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Install Node.js & npm
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
@@ -26,7 +30,7 @@ USER user
 WORKDIR /home/user
 
 # Install nvm and multiple Node.js/npm versions
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash - \
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash \
   && source "/home/user/.nvm/nvm.sh" \
   && nvm install lts/* && npm install -g npm@latest \
   && nvm install lts/argon && npm install -g npm@latest \
