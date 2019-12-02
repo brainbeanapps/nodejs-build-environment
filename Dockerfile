@@ -10,7 +10,7 @@ USER root
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Install Node.js & npm
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
   && apt-get update \
   && apt-get install -y --no-install-recommends nodejs \
   && apt-get clean \
@@ -37,6 +37,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | b
   && nvm install lts/boron && npm install -g npm@latest \
   && nvm install lts/carbon && npm install -g npm@latest \
   && nvm install lts/dubnium && npm install -g npm@latest \
+  && nvm install lts/erbium && npm install -g npm@latest \
   && nvm install stable && npm install -g npm@latest \
   && nvm install node && npm install -g npm@latest \
   && nvm use --lts node
